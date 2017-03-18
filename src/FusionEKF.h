@@ -32,6 +32,11 @@ public:
   KalmanFilter ekf_;
 
 private:
+  /**
+   * Normlaize the measurement values to the accepted ranges.
+   */
+  Eigen::VectorXd NormalizeMeasurements(const MeasurementPackage &measurement_pack);
+  
   // check whether the tracking toolbox was initiallized or not (first measurement)
   bool is_initialized_;
 
